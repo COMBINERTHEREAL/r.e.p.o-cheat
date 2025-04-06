@@ -6,6 +6,32 @@ Basic C# Mono open-source cheat for a new lethal like game called R.E.P.O
 
 ![ezgif-3f3ad382af2a52](https://github.com/user-attachments/assets/745e055f-0e84-4f6c-b1d8-470c916e16e5)
 
+# How to Compile from Source
+
+You need to do these commands where the "r.e.p.o cheat.sln" is:
+
+```
+dotnet build "r.e.p.o cheat" -c Release
+```
+
+And if you want to pull updates then compile it will be like this:
+
+```
+git pull --rebase --autostash
+dotnet build "r.e.p.o cheat" -c Release
+```
+
+And if you want to update compile and inject in the same script:
+This is if the script file is where the sln file is.
+
+```
+git pull --rebase --autostach
+
+:begin
+dotnet build "r.e.p.o cheat" -c Release
+start /wait /b [path to smi.exe] inject -p "REPO" -a "r.e.p.o cheat\bin\Release\r.e.p.o cheat.dll" -n r.e.p.o_cheat -c Loader -m Init
+```
+
 # **FUNCTIONS (still working on, i will release new versions whenever i add functions):**
 - See Live/Dead Players<br />
 - Select Players<br />
